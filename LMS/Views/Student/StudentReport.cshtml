@@ -1,0 +1,54 @@
+﻿@model IEnumerable<LMS.Models.StudentViewModel>
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Book</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group row">
+            <div class="col-lg-6">
+                <form asp-action="StudentReport">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group row">
+                        <div class="col-lg-4">
+                            <label class="control-label">Branch</label>
+                            <select name="BranchId" class="form-control" asp-items="@(new SelectList(ViewBag.BranchId,"BranchId","BranchName"))"></select>
+                        </div>
+                        <div class="col-lg-2">
+                            <label class="control-label"><br /></label>
+                            <input type="submit" value="Get Data" class="btn btn-primary" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-6">
+                <form asp-action="StudentReport">
+                    <div class="form-group row">
+                        <div class="col-lg-6">
+                            <label class="control-label">Student Name </label>
+                            <input type="text" name="studentName"  class="form-control" />
+                        </div>
+                        <div class="col-lg-2">
+                            <label class="control-label"><br /></label>
+                            <input type="submit" value="Get Data" class="btn btn-primary" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        @await Html.PartialAsync("GetStudentReport", Model)
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

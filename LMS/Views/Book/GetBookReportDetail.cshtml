@@ -1,0 +1,75 @@
+﻿@model LMS.Models.BookViewModel
+
+@{
+    ViewData["Title"] = "GetBookReportDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>GetBookReportDetail</h1>
+
+<div>
+    <h4>Book</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BookName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BookName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Detail)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Detail)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Author)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Author)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Publications)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Publications.PublicationName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Branchs)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Branchs.BranchName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Rent)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Rent)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Available)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Available)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BookPhoto)
+        </dt>
+        <dd class="col-sm-10">
+            <img src="~/images/@Model.BookPhotoPath"  width="100px" height="100px"/>
+        </dd>
+    </dl>
+</div>

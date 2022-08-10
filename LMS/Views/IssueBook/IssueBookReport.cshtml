@@ -1,0 +1,64 @@
+﻿@model IEnumerable<LMS.Models.BoookIssue>
+
+@{
+    ViewData["Title"] = "IssueBookReport";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>IssueBookReport</h4>
+
+<p>
+    <a asp-action="IssueBook">Issue Book</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Days)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Books)
+            </th>
+            <th>
+            @Html.DisplayNameFor(model => model.Students)
+        </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IssueDate)
+            </th>
+            <th>
+                Status
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReturnDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Days)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Books.BookName)
+            </td>
+            <td>
+            @Html.DisplayFor(modelItem => item.Students.StudentName)
+        </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IssueDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PanaltyStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReturnDate)
+            </td>
+            <td>
+                <a asp-action="ReturnBook" asp-route-id="@item.IssueId">Return Book</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,92 @@
+﻿@model LMS.Models.Penalty
+
+@{
+    ViewData["Title"] = null;
+    Layout = null;
+}
+
+<div>
+    <h4>Book Detail</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BookName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BookName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Author)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Author)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PublicationName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PublicationName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BranchName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BranchName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Day)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Day)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IssueDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IssueDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BookPhotoPath)
+        </dt>
+        <dd class="col-sm-10">
+            <img src="~/images/@Model.BookPhotoPath" width="100px" height="100px" />
+        </dd>
+    </dl>
+    <form asp-action="savePenalty" enctype="multipart/form-data">
+        <div class="form-group row">
+            <div class="col-lg-5">
+                <label asp-for="PenaltyAmount" class="control-label"></label>
+                <input asp-for="PenaltyAmount" class="form-control" />
+                <input asp-for="Author" class="form-control" type="hidden" />
+                <input asp-for="PublicationName" class="form-control" type="hidden" />
+                <input asp-for="BranchName" class="form-control" type="hidden" />
+                <input asp-for="Price" class="form-control" type="hidden" />
+                <input asp-for="StudentName" class="form-control" type="hidden" />
+                <input asp-for="Day" class="form-control" type="hidden" />
+                <input asp-for="IssueDate" class="form-control" type="hidden" />
+                <input asp-for="Status" class="form-control" type="hidden" value="Yes"/>
+                <input asp-for="BookName" class="form-control" type="hidden" />
+                <input asp-for="BookPhotoPath" class="form-control" type="hidden" />
+            </div>
+            <div class="col-lg-5">
+                <label asp-for="Reason" class="control-label"></label>
+                <textarea asp-for="Reason" class="form-control"></textarea>
+            </div>
+            <div class="col-lg-2">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </div>
+    </form>
+</div>
